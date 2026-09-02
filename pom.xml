@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.example</groupId>
+    <groupId>org.notificationplatform</groupId>
     <artifactId>event-driven-notification-platform</artifactId>
     <version>1.0-SNAPSHOT</version>
 
