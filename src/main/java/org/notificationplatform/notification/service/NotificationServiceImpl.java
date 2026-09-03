@@ -14,11 +14,11 @@ import java.time.Instant;
 @Component
 public class NotificationServiceImpl implements NotificationService {
 
-    @Autowired
-    NotificationEventLogsRepository notificationEventLogsRepository;
+    private final NotificationEventLogsRepository notificationEventLogsRepository;
 
-    @Autowired
-    EntityManager entityManager;
+    public NotificationServiceImpl(NotificationEventLogsRepository notificationEventLogsRepository) {
+        this.notificationEventLogsRepository = notificationEventLogsRepository;
+    }
 
     @Override
     public NotificationCreateResponse pushNotification(NotificationCreateRequest notificationCreateRequest) {

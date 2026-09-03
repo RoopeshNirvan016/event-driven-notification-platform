@@ -1,5 +1,8 @@
 package org.notificationplatform.notification.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,20 +16,21 @@ import java.util.List;
 public class NotificationCreateRequest {
 
     @NotNull
-    Integer userId;
+    private Integer userId;
+
+    @Email
+    @NotBlank
+    private String email;
+
+    @NotBlank
+    private String eventType;
+
+    @NotBlank
+    private String message;
+
+    @NotEmpty
+    private List<Channel> channels;
 
     @NotNull
-    String email;
-
-    @NotNull
-    String eventType;
-
-    @NotNull
-    String message;
-
-    @NotNull
-    List<Channel> channels;
-
-    @NotNull
-    Business businessChannel;
+    private Business businessChannel;
 }

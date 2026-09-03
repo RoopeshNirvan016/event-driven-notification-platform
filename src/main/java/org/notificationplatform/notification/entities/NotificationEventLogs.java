@@ -23,6 +23,9 @@ public class NotificationEventLogs {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column(name = "userId",nullable = false)
+    private String userId;
+
     @Column(name = "email", nullable = false)
     private String email;
 
@@ -40,4 +43,7 @@ public class NotificationEventLogs {
     @Enumerated(EnumType.STRING)
     @Column(name = "business_type", columnDefinition = "Text")
     private Business businessType;
+
+
+
 }

@@ -1,9 +1,12 @@
 package org.notificationplatform.notification.controller;
 
+import jakarta.validation.Valid;
 import org.notificationplatform.notification.dto.NotificationCreateRequest;
 import org.notificationplatform.notification.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -12,7 +15,8 @@ public class NotificationController {
     @Autowired
     NotificationService notificationService;
 
-    public ResponseEntity<?> pushNotification(NotificationCreateRequest notificationCreateRequest){
+    @PostMapping("/api/v1/notifications")
+    public ResponseEntity<?> pushNotification(@Valid @RequestBody NotificationCreateRequest notificationCreateRequest){
        return ResponseEntity.ok(notificationService.pushNotification(notificationCreateRequest));
     }
 }
