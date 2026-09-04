@@ -32,5 +32,5 @@ public class NotificationCreateRequest {
     private List<Channel> channels;
 
     @NotNull
-    private Business businessChannel;
+    private Business businessType;
 }

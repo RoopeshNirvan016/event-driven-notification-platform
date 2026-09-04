@@ -21,7 +21,7 @@ public class NotificationEventLogs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(name = "userId",nullable = false)
     private String userId;
@@ -30,8 +30,8 @@ public class NotificationEventLogs {
     private String email;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "channel", columnDefinition = "jsonb", nullable = false)
-    private List<Channel> channelList;
+    @Column(name = "channels", columnDefinition = "jsonb", nullable = false)
+    private List<Channel> channels;
 
     @Column(name= "created_time", columnDefinition = "TIMESTAMP WITH TIME ZONE" )
     private Instant createdTime;

@@ -9,7 +9,7 @@ public class NotificationCreateResponse {
 
     private NotificationStatus status;
 
-    private Integer notificationId;
+    private Long notificationId;
 
     private NotificationCreateResponse(NotificationResponseBuilder notificationResponseBuilder) {
         this.status = notificationResponseBuilder.status;
@@ -26,7 +26,7 @@ public class NotificationCreateResponse {
         private NotificationStatus status;
 
 
-        private Integer notificationId;
+        private Long notificationId;
 
 
         public NotificationResponseBuilder status(NotificationStatus status) {
@@ -34,7 +34,7 @@ public class NotificationCreateResponse {
             return this;
         }
 
-        public NotificationResponseBuilder notificationId(Integer notificationId) {
+        public NotificationResponseBuilder notificationId(Long notificationId) {
             this.notificationId = notificationId;
             return this;
         }
