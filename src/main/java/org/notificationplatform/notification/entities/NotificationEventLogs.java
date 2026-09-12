@@ -24,7 +24,7 @@ public class NotificationEventLogs {
     private Long id;
 
     @Column(name = "userId",nullable = false)
-    private String userId;
+    private Integer userId;
 
     @Column(name = "email", nullable = false)
     private String email;

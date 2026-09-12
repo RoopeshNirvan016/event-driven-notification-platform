@@ -26,6 +26,8 @@ public class NotificationServiceImpl implements NotificationService {
         notificationEventLogs.setCreatedTime(Instant.now());
         notificationEventLogs.setBusinessType(notificationCreateRequest.getBusinessType());
         notificationEventLogs.setChannels(notificationCreateRequest.getChannels());
+        notificationEventLogs.setUserId(notificationCreateRequest.getUserId());
+        notificationEventLogs.setStatus(NotificationStatus.QUEUED);
         NotificationEventLogs nL = notificationEventLogsRepository.save(notificationEventLogs);
 
         NotificationCreateResponse notificationCreateResponse = NotificationCreateResponse.getBuilder().notificationId(nL.getId()).status(NotificationStatus.QUEUED).build();

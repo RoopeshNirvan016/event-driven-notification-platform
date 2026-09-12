@@ -19,18 +19,18 @@ public class NotificationCreateRequest {
     private Integer userId;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "Email is required")
     private String email;
 
     @NotBlank
     private String eventType;
 
-    @NotBlank
+    @NotBlank(message = "Message is required")
     private String message;
 
-    @NotEmpty
+    @NotEmpty(message = "List of Channels are required")
     private List<Channel> channels;
 
-    @NotNull
+    @NotNull(message = "Business type is required")
     private Business businessType;
 }
